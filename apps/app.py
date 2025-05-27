@@ -22,13 +22,13 @@ st.markdown(
 
 @st.cache_data
 def load_components():
-    with open("../models/vectorizer.pkl", "rb") as f:
+    with open("./models/vectorizer.pkl", "rb") as f:
         vectorizer = pickle.load(f)
-    with open("../models/lr.pkl", "rb") as f:
+    with open("./models/lr.pkl", "rb") as f:
         lr = pickle.load(f)
-    with open("../models/gbc.pkl", "rb") as f:
+    with open("./models/gbc.pkl", "rb") as f:
         gbc = pickle.load(f)
-    with open("../models/rfc.pkl", "rb") as f:
+    with open("./models/rfc.pkl", "rb") as f:
         rfc = pickle.load(f)
     return vectorizer, lr, gbc, rfc
 
@@ -75,7 +75,7 @@ def manualPredict(news, vectorizer, lr, gbc, rfc):
 
 st.title("🕵️‍♂️ Fake News Detection App")
 
-image = Image.open("../assets/image.png")
+image = Image.open("./assets/image.png")
 st.image(image, width=400)
 
 vectorizer, lr, gbc, rfc = load_components()
